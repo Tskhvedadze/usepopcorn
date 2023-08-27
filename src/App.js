@@ -61,6 +61,17 @@ export default function App() {
         <NumResults movies={movies} />
       </NavBar>
       <Main>
+        {/* 
+        Passing elements as a Props
+        <Box element={<MoviesList movies={movies} />} />
+        <Box
+          element={
+            <>
+              <WatchedSummary watched={watched} />
+              <WatchedMoviesList watched={watched} />
+            </>
+          }
+        /> */}
         <Box>
           <MoviesList movies={movies} />
         </Box>
@@ -154,28 +165,6 @@ function Movie({ movie }) {
     </li>
   )
 }
-
-// function WatchedBox() {
-// const [watched, setWatched] = useState(tempWatchedData)
-//   const [isOpen2, setIsOpen2] = useState(true)
-
-//   return (
-//     <div className='box'>
-//       <button
-//         className='btn-toggle'
-//         onClick={() => setIsOpen2((open) => !open)}
-//       >
-//         {isOpen2 ? '–' : '+'}
-//       </button>
-//       {isOpen2 && (
-//         <>
-//           <WatchedSummary watched={watched} />
-//           <WatchedMoviesList watched={watched} />
-//         </>
-//       )}
-//     </div>
-//   )
-// }
 
 function WatchedSummary({ watched }) {
   const avgImdbRating = average(watched.map((movie) => movie.imdbRating))
