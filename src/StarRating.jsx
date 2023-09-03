@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 const containerStyle = {
   display: 'flex',
@@ -8,6 +9,14 @@ const containerStyle = {
 
 const startContainerStyle = {
   display: 'flex',
+}
+
+StartRating.prototype = {
+  maxRating: PropTypes.number,
+  size: PropTypes.number,
+  color: PropTypes.string,
+  message: PropTypes.array,
+  onSetRating: PropTypes.func,
 }
 
 export default function StartRating({
